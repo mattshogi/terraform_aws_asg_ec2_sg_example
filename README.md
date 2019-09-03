@@ -1,6 +1,6 @@
 # Terraform Example: 
 ### Deploying EC2 Instances with Auto-Scaling, Load Balancing, and Security Groups
-This is a quick example on how to use Terraform to deploy AWS Auto-Scaling EC2 instances with a load balancer, displaying a simple "Hello, World" httpd page. The security groups created here are for displaying the page on the public internet, as well as allowing SSH traffic. The resources used here fall under the AWS Free tier. 
+This is a quick example on how to use Terraform to deploy AWS Auto-Scaling EC2 instances with a load balancer, displaying a simple "Hello, World" page via httpd. The security groups created here are for displaying the page on the public internet, as well as allowing SSH traffic. The resources used here fall under the AWS Free tier. 
 
 # Getting Started
 ### Packages
