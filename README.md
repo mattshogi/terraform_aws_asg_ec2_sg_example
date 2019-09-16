@@ -15,5 +15,5 @@ Download the repo, navigate to the directory and run `terraform plan` and `terra
 Although the instances created here are categorized in the AWS Free Tier, it is a good practice to run `terraform destroy` when you are finished running this example and no longer require these resources. 
 
 # Acknowledgments
-I developed this example using Ratul Basak's guide on Medium.com, so a big thank you to him for writing it:
+This example was developed using Ratul Basak's guide found here:
 https://medium.com/@ratulbasak93/aws-elb-and-autoscaling-using-terraform-9999e6266734
