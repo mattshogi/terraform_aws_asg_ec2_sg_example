@@ -7,7 +7,7 @@ This is a quick example on how to use Terraform to deploy AWS Auto-Scaling EC2 i
 I am using Terraform version 0.12.7, and AWS-CLI version 1.16.230 (Python/2.7.10)
 
 ### Prerequisites
-Make sure you have Terraform added to you $PATH so that you can run the commands in the directory where you store this repo. 
+Make sure you have Terraform added to your $PATH so that you can run the commands in the directory where you store this repo. 
 
 # Usage
 Download the repo, navigate to the directory and run `terraform plan` and `terraform apply`. With a successful `terraform apply`, you will see the output for the 'elb_dns_name' and IP address where the site is displayed and can be verified. 
