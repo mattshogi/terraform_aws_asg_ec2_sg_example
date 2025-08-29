@@ -1,6 +1,7 @@
-output "instance_ids" {
-    value = ["${aws_instance.web.*.public_ip}"]
+output "asg_instance_ids" {
+  value = aws_autoscaling_group.example.id
 }
-output "elb_dns_name" {
-  value = "${aws_elb.example.dns_name}"
+
+output "alb_dns_name" {
+  value = aws_lb.example.dns_name
 }

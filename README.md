@@ -1,19 +1,30 @@
-# Terraform Example: 
-### Deploying EC2 Instances with Auto-Scaling, Load Balancing, and Security Groups
-This is a quick example on how to use Terraform to deploy AWS Auto-Scaling EC2 instances with a load balancer, displaying a simple "Hello, World" page via httpd. The security groups created here are for displaying the page on the public internet, as well as allowing SSH traffic. The resources used here fall under the AWS Free tier. 
+# Terraform Example: Modern AWS EC2 Auto-Scaling with ALB
 
-# Getting Started
-### Packages
-I am using Terraform version 0.12.7, and AWS-CLI version 1.16.230 (Python/2.7.10)
+This example demonstrates how to use Terraform (v1.x+) to deploy AWS EC2 instances in an Auto Scaling Group behind an Application Load Balancer (ALB), with security groups and tagging. The instances serve a simple "Hello, World" page via Apache httpd.
+
+## Getting Started
 
 ### Prerequisites
-Make sure you have Terraform added to your $PATH so that you can run the commands in the directory where you store this repo. 
+- Terraform >= 1.0.0
+- AWS CLI >= 2.x
+- Configure your AWS credentials (`aws configure`)
 
-# Usage
-Download the repo, navigate to the directory and run `terraform plan` and `terraform apply`. With a successful `terraform apply`, you will see the output for the 'elb_dns_name' and IP address where the site is displayed and can be verified. 
+### Usage
+1. Clone the repo and navigate to the directory.
+2. Edit variables in `variable.tf` as needed (especially `key_name`, subnet IDs, VPC ID, and SSH CIDR).
+3. Run `terraform init`, `terraform plan`, and `terraform apply`.
+4. On success, the output will show the ALB DNS name where the site is available.
 
-Although the instances created here are categorized in the AWS Free Tier, it is a good practice to run `terraform destroy` when you are finished running this example and no longer require these resources. 
+**Security Note:**  
+Restrict SSH access to your IP address only. Always destroy resources (`terraform destroy`) when finished to avoid charges.
 
-# Acknowledgments
-This example was developed using Ratul Basak's guide found here:
+## Modernizations
+- Uses Terraform 1.x and AWS provider 4.x+
+- Application Load Balancer (ALB) replaces Classic ELB
+- Launch Template replaces Launch Configuration
+- Improved variable typing and validation
+- Enhanced tagging and security group rules
+
+## Acknowledgments
+Originally inspired by Ratul Basak's guide:  
 https://medium.com/@ratulbasak93/aws-elb-and-autoscaling-using-terraform-9999e6266734
